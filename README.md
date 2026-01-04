@@ -1,4 +1,4 @@
-# Emprty Fridge: AI Pantry Assistant
+# Empty Fridge: AI Pantry Assistant
 
 This project is a computer vision and LLM-based application that identifies food ingredients from images and generates custom recipes. It uses Google Gemini for image analysis and content generation, with a Streamlit interface for the frontend.
 
@@ -28,4 +28,5 @@ This project is a computer vision and LLM-based application that identifies food
     * If running via tunnel, an **Ngrok Authtoken** must be provided in the launch cell.
 
 4.  **Run the App:**
+
     Execute the final cell to start the Streamlit server and generate the public URL. Enter your preferences in the sidebar to start scanning.
