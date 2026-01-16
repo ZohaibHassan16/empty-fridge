@@ -1,66 +1,53 @@
-<<<<<<< Updated upstream
-# Empty Fridge: AI Pantry Assistant
+# Empty Fridge
 
-This project is a computer vision and LLM-based application that identifies food ingredients from images and generates custom recipes. It uses Google Gemini for image analysis and content generation, with a Streamlit interface for the frontend.
-
-## Features
-* **Ingredient Detection:** Scans uploaded images to identify available food items using Gemini Vision.
-* **Recipe Generation:** Creates recipes based on detected ingredients, user-selected cuisine, and dietary restrictions.
-* **Analysis:** Provides estimated nutritional data and beverage pairing suggestions.
-* **PDF Export:** Converts the generated recipe into a downloadable PDF format.
-
-## Tech Stack
-* **Python**
-* **Streamlit** (Web UI)
-* **Google Generative AI** (Gemini 2.5 Flash)
-* **FPDF2 / xhtml2pdf** (PDF Generation)
-* **pyngrok** (Tunneling for Colab)
-
-## Setup & Usage
-
-1.  **Open in Google Colab:**
-    Upload the notebook (`.ipynb`) to Google Colab.
-
-2.  **Dependencies:**
-    Run the first cell to install required libraries (`google-generativeai`, `streamlit`, `fpdf2`, `pyngrok`).
-
-3.  **API Configuration:**
-    * A valid **Google Gemini API Key** is required in the app sidebar.
-    * If running via tunnel, an **Ngrok Authtoken** must be provided in the launch cell.
-
-4.  **Run the App:**
-
-    Execute the final cell to start the Streamlit server and generate the public URL. Enter your preferences in the sidebar to start scanning.
-=======
-# Emprty Fridge: AI Pantry Assistant
-
-This project is a computer vision and LLM-based application that identifies food ingredients from images and generates custom recipes. It uses Google Gemini for image analysis and content generation, with a Streamlit interface for the frontend.
+Empty Fridge is a Streamlit application powered by Google's Gemini models that looks at photos of your ingredients (no matter how scarce and messy) and hallucinates (in a good way) a legitimate recipe you can actually cook.
 
 ## Features
-* **Ingredient Detection:** Scans uploaded images to identify available food items using Gemini Vision.
-* **Recipe Generation:** Creates recipes based on detected ingredients, user-selected cuisine, and dietary restrictions.
-* **Analysis:** Provides estimated nutritional data and beverage pairing suggestions.
-* **PDF Export:** Converts the generated recipe into a downloadable PDF format.
+
+- **AI Vision Chef:** Upload a photo of your messy pantry or fridge shelf. The app identifies the ingredients for you (so you don't have to type them out).
+
+- **Creative Recipe Generation:** Uses the ingredients you have + your cravings (e.g., "Comfort Food", "Thai") to get a structured, easy-to-follow recipe.
+
+- **Nutritionist Mode:** An AI agent analyzes the generated recipe to give you a rough health breakdown (Calories, Protein, Carbs).
+
+- **Barista:** Suggests the perfect beverage pairing (alcoholic or non-alcoholic) based on the flavor profile of the dish.
+
+- **PDF Export:** Generates a clean, downloadable PDF of the recipe so you can save it for later.
 
 ## Tech Stack
-* **Python**
-* **Streamlit** (Web UI)
-* **Google Generative AI** (Gemini 2.5 Flash)
-* **FPDF2 / xhtml2pdf** (PDF Generation)
-* **pyngrok** (Tunneling for Colab)
 
-## Setup & Usage
+- **Python** (backend)
 
-1.  **Open in Google Colab:**
-    Upload the notebook (`.ipynb`) to Google Colab.
+- **Streamlit** (frontend)
 
-2.  **Dependencies:**
-    Run the first cell to install required libraries (`google-generativeai`, `streamlit`, `fpdf2`, `pyngrok`).
+- **Google Gemini API** (Specifically `gemini-2.5-flash-lite` for speed and vision capabilities)
 
-3.  **API Configuration:**
-    * A valid **Google Gemini API Key** is required in the app sidebar.
-    * If running via tunnel, an **Ngrok Authtoken** must be provided in the launch cell.
+- **xhtml2pdf** (For generating the PDF reports)
 
-4.  **Run the App:**
-    Execute the final cell to start the Streamlit server and generate the public URL. Enter your preferences in the sidebar to start scanning.
->>>>>>> Stashed changes
+## How to Run It
+
+### Option 1: Google Colab (Easy Way)
+
+If you don't want to mess with local environments, I included a Jupyter Notebook (`Empty Fridge.ipynb`) that handles everything.
+
+1. Open the notebook in Colab.
+
+2. Add your **Gemini API Key** when prompted in the app sidebar.
+
+3. The notebook uses `ngrok` to tunnel the Streamlit app so you can view it in your browser.
+
+### Option 2: Running Locally
+
+1. Clone the repo.
+
+2. Install requirements:
+   
+   ```
+   pip install -q -U google-generativeai streamlit fpdf2 Pillow xhtml2pdf
+   ```
+
+3. Run the app:
+   
+   ```
+   streamlit run app.py
+   ```
